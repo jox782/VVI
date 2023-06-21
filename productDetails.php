@@ -1,8 +1,7 @@
-<?php 
+<?php
 include("Connection.php");
 session_start();
-if($_GET['number'])
-{   
+if ($_GET['number']) {
 
     $product_id = $_GET['number'];
     $type = $_GET['type'];
@@ -14,55 +13,53 @@ $row = mysqli_fetch_array($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/product detalis/css/all.min.css">
     <link rel="stylesheet" href="css/product detalis/css/style.css">
     <link rel="stylesheet" href="css/plan.css">
-    
+
     <title>Product Details</title>
 </head>
+
 <body>
     <?php
-include 'header.php';
-?>
+    include 'header.php';
+    ?>
     <div class="container" style="background-color: #000016;">
         <div class="box">
-            <?php if($type == "plans"){?> 
+            <?php if ($type == "plans") { ?>
                 <div class="plans">
-        <div class="plan plan--light">
-            <h2 class="plan-title"><?php echo($row ['Name'])?></h2>
-
-            <p class="plan-price"><?php echo($row ['Price'])?><span>/month</span></p>
-
-            <p class="plan-description">
-               <?php echo($row ['Description'])?>
-            </p>
-
-        </div>
-
-    </div>
-                <?php
-            }else{?>
-            <div class="images">
-                <div class="img-holder active">
-                    <img src="productsImg/<?php echo($row ['img'])?>"/>
+                    <div class="plan plan--light">
+                        <h2 class="plan-title"><?php echo ($row['Name']) ?></h2>
+                        <p class="plan-price"><?php echo ($row['Price']) ?><span>/month</span></p>
+                        <p class="plan-description">
+                            <?php echo ($row['Description']) ?>
+                        </p>
+                    </div>
                 </div>
-                <div class="img-holder">
-                    <img src="productsImg/<?php echo($row ['img'])?>"/>
+            <?php
+            } else { ?>
+                <div class="images">
+                    <div class="img-holder active">
+                        <img src="productsImg/<?php echo ($row['img']) ?>" />
+                    </div>
+                    <div class="img-holder">
+                        <img src="productsImg/<?php echo ($row['img']) ?>" />
+                    </div>
+                    <div class="img-holder">
+                        <img src="productsImg/<?php echo ($row['img']) ?>" />
+                    </div>
+                    <div class="img-holder">
+                        <img src="productsImg/<?php echo ($row['img']) ?>" />
+                    </div>
                 </div>
-                <div class="img-holder">
-                    <img src="productsImg/<?php echo($row ['img'])?>"/>
-                </div>
-                <div class="img-holder">
-                    <img src="productsImg/<?php echo($row ['img'])?>"/>
-                </div>
-            </div>
-            <?php }?> 
+            <?php } ?>
             <div class="basic-info">
                 <?php ?>
-                <h1><?php echo($row ['Name']) ?></h1>
+                <h1><?php echo ($row['Name']) ?></h1>
                 <div class="rate">
                     <i class="filled fas fa-star"></i>
                     <i class="filled fas fa-star"></i>
@@ -70,46 +67,43 @@ include 'header.php';
                     <i class="filled fas fa-star"></i>
                     <i class="filled fas fa-star"></i>
                 </div>
-                <span><?php echo ($row ['Price']) ?></span>
+                <span><?php echo ($row['Price']) ?></span>
                 <div class="options">
-                    <a href="checkout.php?number=<?php echo($row ['id']) ?>&type=<?php echo($type) ?>">Buy It Now</a>
+                    <a href="checkout.php?number=<?php echo ($row['id']) ?>&type=<?php echo ($type) ?>">Buy It Now</a>
                 </div>
-<p class="description"><?php echo($row ['LongDescription']) ?></p>
-
+                <p class="description" style="line-height: 1.7;"><?php echo ($row['LongDescription']) ?></p>
             </div>
             <div class="description">
                 <ul class="features">
-                    <?php if($type == "plans") { ?>
-                    <?php if($product_id == 1) {?>
+                    <!-- Start Plans Features only -->
 
-                    <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
-                    <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
-                     <li><i class="fa-solid fa-circle-xmark"></i>Unsupported Feature</li>
-                    <li><i class="fa-solid fa-circle-xmark"></i>Unsupported Feature</li>
-                     <li><i class="fa-solid fa-circle-xmark"></i>Unsupported Feature</li>
-                    <li><i class="fa-solid fa-circle-xmark"></i>Unsupported Feature</li>
-                    <?php }?> 
-                    <?php if($product_id == 2) {?>
-
-                    <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
-                    <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
-                    <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
-                    <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
-                     <li><i class="fa-solid fa-circle-xmark"></i>Unsupported Feature</li>
-                    <li><i class="fa-solid fa-circle-xmark"></i>Unsupported Feature</li>
-                    <?php }?> 
-                    <?php if($product_id == 3) {?>
-
-                    <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
-                    <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
-                    <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
-                    <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
-                    <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
-                    <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
-                    <?php }?> 
-                    
+                    <?php if ($type == "plans") { ?>
+                        <?php if ($product_id == 1) { ?>
+                            <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
+                            <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
+                            <li><i class="fa-solid fa-circle-xmark"></i>Unsupported Feature</li>
+                            <li><i class="fa-solid fa-circle-xmark"></i>Unsupported Feature</li>
+                            <li><i class="fa-solid fa-circle-xmark"></i>Unsupported Feature</li>
+                            <li><i class="fa-solid fa-circle-xmark"></i>Unsupported Feature</li>
+                        <?php } ?>
+                        <?php if ($product_id == 2) { ?>
+                            <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
+                            <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
+                            <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
+                            <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
+                            <li><i class="fa-solid fa-circle-xmark"></i>Unsupported Feature</li>
+                            <li><i class="fa-solid fa-circle-xmark"></i>Unsupported Feature</li>
+                        <?php } ?>
+                        <?php if ($product_id == 3) { ?>
+                            <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
+                            <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
+                            <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
+                            <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
+                            <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
+                            <li><i class="fa-solid fa-circle-check"></i>Supported Feature</li>
+                        <?php } ?>
                     <?php } ?>
-                    
+                    <!-- End Plans Features only -->
                 </ul>
                 <ul class="social">
                     <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
@@ -120,4 +114,5 @@ include 'header.php';
         </div>
     </div>
 </body>
+
 </html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 21, 2023 at 04:57 PM
+-- Generation Time: Jun 21, 2023 at 07:41 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -20,6 +20,34 @@ SET time_zone = "+00:00";
 --
 -- Database: `ecommdb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `coach-order`
+--
+
+CREATE TABLE `coach-order` (
+  `id` int(30) NOT NULL,
+  `product` varchar(50) NOT NULL,
+  `price` int(30) NOT NULL,
+  `status` varchar(10) NOT NULL DEFAULT 'pending',
+  `address` int(200) NOT NULL,
+  `city` int(30) NOT NULL,
+  `zip` varchar(4) NOT NULL,
+  `pay_way` varchar(20) NOT NULL,
+  `customer_id` int(30) NOT NULL,
+  `img` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `coach-order`
+--
+
+INSERT INTO `coach-order` (`id`, `product`, `price`, `status`, `address`, `city`, `zip`, `pay_way`, `customer_id`, `img`) VALUES
+(21, 'Najeeb Khan', 200, 'pending', 0, 0, '1234', '', 30, 'WhatsApp Image 2023-06-21 at 14.11.48.jpg'),
+(22, 'Najeeb Khan', 200, 'pending', 0, 0, '1234', '', 30, 'WhatsApp Image 2023-06-21 at 14.11.48.jpg'),
+(23, 'Najeeb Khan', 200, 'pending', 0, 0, '1234', '', 30, 'WhatsApp Image 2023-06-21 at 14.11.48.jpg');
 
 -- --------------------------------------------------------
 
@@ -42,48 +70,31 @@ CREATE TABLE `coaches` (
 --
 
 INSERT INTO `coaches` (`id`, `Name`, `Role`, `Description`, `LongDescription`, `Price`, `img`) VALUES
-(33, 'Call of duty ', 'Military war game', 'Modern warfare ', 'Call of Duty is a first-person shooter video game franchise that focuses heavily on military and war themes, offering a realistic experience of battles and military confrontations. The game includes a variety of weapons and military equipment, and allows players to customize and develop their characters over time. The franchise is known for its continuous updates and new additions that add extra content and improve the gameplay experience. Call of Duty is one of the most popular video game franchises in the world, enjoyed by players of all ages and nationalities.', '899.00', '64914e447cea63.80863712.jpeg'),
-(34, 'Ghada Azzam', 'league of legends', 'Advanced Coach', 'working with players who are new to the game or have limited experience. They have a patient and encouraging approach to coaching and are skilled at breaking down the fundamentals of the game into simple and easy-to-understand concepts. Some advantages of working with an advanced  coach include:\r\n\r\n- Learning the basics: helping the trainees learn the basic skills and rules of the game, which is essential for building a strong foundation.\r\n\r\n- Building confidence: create a positive and supportive learning environment that helps trainees feel comfortable and confident as they develop their skills.\r\n\r\n- Individualized attention: provide feedback and guidance that is tailored to the individual needs of each trainee, helping them to progress at their own pace.', '100.00', 'f89c545a-7edb-4f25-b02a-16ca746febb6-smal5970'),
-(35, 'Najeeb Khan', 'league of legends', 'grandmaster Coach', 'an experienced coach who has a deep understanding of the game and is able to provide advanced training and guidance to players at all levels. Some advantages of working with a master coach include:\r\n\r\n- Advanced training: provide advanced training and guidance that is tailored to the specific needs of each trainee, helping them to improve their skills and performance.\r\n\r\n- Strategic thinking: skilled at analyzing players\' strengths and weaknesses and can create training sessions that are challenging and effective.\r\n\r\n- Mentoring: provide mentorship and guidance to trainees, helping them to develop their skills and achieve their goals.', '200.00', '52027722565_b300a1834a_k-e1660235468354'),
-(36, 'Erik Milošević', 'league of legends', 'Elite Coach', 'highly experienced coach who has a proven track record of success at the highest levels of the sport. Some advantages of working with an elite coach include:\r\n\r\n- High-level training: provide training and guidance that is tailored to the specific needs of each trainee, helping them to reach their full potential and achieve success at the highest levels of the sport.\r\n\r\n- Strategic planning: skilled at developing strategic plans and game plans that can help trainees succeed in competition.\r\n\r\n- Mental toughness: helping trainees develop mental toughness and resilience, which is essential for success at the highest levels of the sport.', '300.00', 'ESPORTS_COACH_Robban-1'),
-(37, 'Jana Khattab', 'FIFA 23', 'advanced Coach', '- Access to basic training materials and tutorials\r\n- Learning the fundamental skills of the game, such as passing, shooting, and defending\r\n- Understanding the different game modes and how to play them effectively', '100.00', '62dae18ff974602c2bb2a6e8_6-min'),
-(38, 'Mukhtar Khan', 'FIFA 23', 'Grandmaster Coach', '- Personalized training \r\n- Development of playing style and strategies\r\n- Performance analysis to identify areas for improvement\r\n- Access to advanced training materials and tutorials', '200.00', 'Roseau_at_OMEN_Challenger_Series_2019-1024x575'),
-(39, 'Zenichiro Hitsuka', 'FIFA 23', 'Elite Coach', 'highly experienced coach who has a proven track record of success at the highest levels of the sport. Some advantages of working with an elite coach include:\r\n\r\n- High-level training: provide training and guidance that is tailored to the specific needs of each trainee, helping them to reach their full potential and achieve success at the highest levels of the sport.\r\n\r\n- Strategic planning: skilled at developing strategic plans and game plans that can help trainees succeed in competition.\r\n\r\n- Mental toughness: helping trainees develop mental toughness and resilience, which is essential for success at the highest levels of the sport.', '300.00', '5e97746973d0c814c5459f59');
+(34, 'Ghada Azzam', 'league of legends', 'Advanced Coach', 'working with players who are new to the game or have limited experience. They have a patient and encouraging approach to coaching and are skilled at breaking down the fundamentals of the game into simple and easy-to-understand concepts. Some advantages of working with an advanced  coach include:\r\n\r\n- Learning the basics: helping the trainees learn the basic skills and rules of the game, which is essential for building a strong foundation.\r\n\r\n- Building confidence: create a positive and supportive learning environment that helps trainees feel comfortable and confident as they develop their skills.\r\n\r\n- Individualized attention: provide feedback and guidance that is tailored to the individual needs of each trainee, helping them to progress at their own pace.', '100.00', 'WhatsApp Image 2023-06-21 at 14.11.47.jpg'),
+(35, 'Najeeb Khan', 'league of legends', 'grandmaster Coach', 'an experienced coach who has a deep understanding of the game and is able to provide advanced training and guidance to players at all levels. Some advantages of working with a master coach include:\r\n\r\n- Advanced training: provide advanced training and guidance that is tailored to the specific needs of each trainee, helping them to improve their skills and performance.\r\n\r\n- Strategic thinking: skilled at analyzing players\' strengths and weaknesses and can create training sessions that are challenging and effective.\r\n\r\n- Mentoring: provide mentorship and guidance to trainees, helping them to develop their skills and achieve their goals.', '200.00', 'WhatsApp Image 2023-06-21 at 14.11.48.jpg'),
+(36, 'Erik Milošević', 'league of legends', 'Elite Coach', 'highly experienced coach who has a proven track record of success at the highest levels of the sport. Some advantages of working with an elite coach include:\r\n\r\n- High-level training: provide training and guidance that is tailored to the specific needs of each trainee, helping them to reach their full potential and achieve success at the highest levels of the sport.\r\n\r\n- Strategic planning: skilled at developing strategic plans and game plans that can help trainees succeed in competition.\r\n\r\n- Mental toughness: helping trainees develop mental toughness and resilience, which is essential for success at the highest levels of the sport.', '300.00', 'WhatsApp Image 2023-06-21 at 14.11.4hh8.jpg'),
+(37, 'Jana Khattab', 'FIFA 23', 'advanced Coach', '- Access to basic training materials and tutorials\r\n- Learning the fundamental skills of the game, such as passing, shooting, and defending\r\n- Understanding the different game modes and how to play them effectively', '100.00', 'WhatsApp Image 2023-06-21 at 14.11.4hjj8.jpg'),
+(38, 'Mukhtar Khan', 'FIFA 23', 'Grandmaster Coach', '- Personalized training \r\n- Development of playing style and strategies\r\n- Performance analysis to identify areas for improvement\r\n- Access to advanced training materials and tutorials', '200.00', 'WhatsApp Image 2023-06-21 at hh14.11.49.jpg'),
+(39, 'Zenichiro Hitsuka', 'FIFA 23', 'Elite Coach', 'highly experienced coach who has a proven track record of success at the highest levels of the sport. Some advantages of working with an elite coach include:\r\n\r\n- High-level training: provide training and guidance that is tailored to the specific needs of each trainee, helping them to reach their full potential and achieve success at the highest levels of the sport.\r\n\r\n- Strategic planning: skilled at developing strategic plans and game plans that can help trainees succeed in competition.\r\n\r\n- Mental toughness: helping trainees develop mental toughness and resilience, which is essential for success at the highest levels of the sport.', '300.00', 'WhatsApp Image 2023-06-21 at 14.11.46.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order`
+-- Table structure for table `plan-order`
 --
 
-CREATE TABLE `order` (
-  `id` int(30) NOT NULL,
-  `product` varchar(50) NOT NULL,
-  `price` int(30) NOT NULL,
-  `status` varchar(10) NOT NULL DEFAULT 'pending',
-  `address` int(200) NOT NULL,
-  `city` int(30) NOT NULL,
-  `zip` varchar(4) NOT NULL,
-  `pay_way` varchar(20) NOT NULL,
-  `customer_id` int(30) NOT NULL
+CREATE TABLE `plan-order` (
+  `plan_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `order`
+-- Dumping data for table `plan-order`
 --
 
-INSERT INTO `order` (`id`, `product`, `price`, `status`, `address`, `city`, `zip`, `pay_way`, `customer_id`) VALUES
-(1, 'Johen Doe', 400, 'pending', 19, 0, '1234', '', 30),
-(2, 'Johen Doe', 400, 'pending', 19, 0, '1234', '', 30),
-(3, 'Johen Doe', 400, 'pending', 19, 0, '1234', '', 30),
-(4, 'Johen Doe', 400, 'pending', 19, 0, '1234', '', 30),
-(5, 'Johen Doe', 400, 'pending', 19, 0, '1234', '', 30),
-(6, 'Mark Doe', 1000, 'pending', 19, 0, '1234', '', 30),
-(7, 'Xbox Wireless Controller', 1800, 'pending', 19, 0, '1234', '', 30),
-(8, 'Mark Doe', 1000, 'pending', 19, 0, '1234', '', 30),
-(9, 'Xbox Wireless Controller', 1800, 'pending', 19, 0, '1234', '', 30),
-(10, 'Johen Doe', 400, 'pending', 19, 0, '1234', '', 30),
-(11, 'Razer Skin - Razer Blade 16', 772, 'pending', 19, 0, '1234', '', 30);
+INSERT INTO `plan-order` (`plan_id`, `customer_id`) VALUES
+(2, 30),
+(2, 30);
 
 -- --------------------------------------------------------
 
@@ -160,15 +171,20 @@ CREATE TABLE `product_order` (
   `city` int(30) NOT NULL,
   `zip` varchar(4) NOT NULL,
   `pay_way` varchar(20) NOT NULL,
-  `customer_id` int(30) NOT NULL
+  `customer_id` int(30) NOT NULL,
+  `img` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `product_order`
 --
 
-INSERT INTO `product_order` (`id`, `product`, `price`, `status`, `address`, `city`, `zip`, `pay_way`, `customer_id`) VALUES
-(6, 'Mark Doe', 1000, 'pending', 19, 0, '1234', '', 30);
+INSERT INTO `product_order` (`id`, `product`, `price`, `status`, `address`, `city`, `zip`, `pay_way`, `customer_id`, `img`) VALUES
+(7, 'Xbox Wireless Controller', 1800, 'pending', 0, 0, '1234', '', 30, '64711c329a2370.22533638.jpg'),
+(8, 'Xbox Wireless Controller', 1800, 'pending', 0, 0, '1234', '', 30, '64711c329a2370.22533638.jpg'),
+(9, 'MX ERGO', 3089, 'pending', 0, 0, '1234', '', 30, 'mx-ergo-plus-gallery-02.webp'),
+(10, 'Redragon PISCES P016 Gaming Mouse Pad', 125, 'pending', 0, 0, '1234', '', 30, '73oPTidFl27eQvOXy0vBSOloDIO4FPvsFfdNINoI.jpg'),
+(11, 'Xbox Wireless Controller', 1800, 'pending', 0, 0, '1234', '', 30, '64711c329a2370.22533638.jpg');
 
 -- --------------------------------------------------------
 
@@ -196,23 +212,23 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `firstName`, `lastName`, `address`, `city`, `phone`, `zip`) VALUES
 (5, 'admin', 'admin@a.com', 'admin', 'admin', '', '', '', '', '', 0),
-(30, 'jox', 'yousef.a.abdelkarim@gmail.com', '123', 'user', 'Yousef', 'Abdelkariem', '19 ش النصر متفرع من ابو عيسى م', 'cairo', '+11204846938', 1234),
-(31, '123123', 'yousef.a.abdelkarim@gmail.com', '123', 'user', 'Yousef', 'Abdelkariem', '19 ش النصر متفرع من ابو عيسى م', '19 ش النصر متفرع من ش ابو عيسى', '+11204846938', 123);
+(30, 'jox', 'yousef.a.abdelkarim@gmail.com', '123', 'user', 'Yousef', 'Abdelkariem', 'naser city, cairo', 'cairo', '+11204846938', 1234),
+(31, '123123', 'yousef.a.abdelkarim@gmail.com', '123', 'user', 'Yousef', 'Abdelkariem', 'naser city, cairo', 'cairo', '+11204846938', 123);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `coaches`
+-- Indexes for table `coach-order`
 --
-ALTER TABLE `coaches`
+ALTER TABLE `coach-order`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `order`
+-- Indexes for table `coaches`
 --
-ALTER TABLE `order`
+ALTER TABLE `coaches`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -244,16 +260,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `coach-order`
+--
+ALTER TABLE `coach-order`
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
 -- AUTO_INCREMENT for table `coaches`
 --
 ALTER TABLE `coaches`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
-
---
--- AUTO_INCREMENT for table `order`
---
-ALTER TABLE `order`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `plans`
@@ -271,7 +287,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `product_order`
 --
 ALTER TABLE `product_order`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `users`

@@ -6,10 +6,3 @@ $pass = "";
 $dbname = "ecommdb";
 
 $con = mysqli_connect ($server, $username, $pass, $dbname);
-
-?>
-
-
-
-
-
