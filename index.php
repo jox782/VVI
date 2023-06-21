@@ -1,6 +1,9 @@
 <?php
 include 'Connection.php';
 session_start();
+$myquery = "select * from `plans`";
+$result = mysqli_query($con, $myquery);
+$row = mysqli_fetch_array($result);
 
 ?>
 
@@ -32,10 +35,10 @@ include 'header.php';
     <section class="main" id="main">
       <div>
          <h2><?php if(isset($_SESSION['name'])) echo($_SESSION['name']); ?></h2>
-         <h2>Welcome to the Gamers Academy <br> <span>Virtual Victory Institute</span></h2>
+         <h2>Welcome to the Gamers Academy <br> <span><p>V</p>irtual <p>V</p>ictory <br> <p>I</p>nstitute</span></h2>
          <H3>For <span class="valo">Professional</span> lovers</H3>
          
-         <a href="#projects" class="main-btn">GO TO STORE</a>
+         <a href="#product" class="main-btn">GO TO STORE</a>
 
         <div class="social-icons">
           
@@ -90,20 +93,20 @@ include 'header.php';
 
     ?>
 
-    <section class="projects" id="projects">
+    <section class="product" id="product">
       <h2 class="title">Best Selling</h2>
       <div class="content">
         <?php
         while($row = mysqli_fetch_array($result))
         {
         ?>
-          <div class="project-card">
-              <div class="project-image">
+          <div class="product-card">
+              <div class="product-image">
                   <img src="productsImg/<?php echo($row ['img'])?>"/>
               </div>
-              <div class="project-info">
-                  <p class="project-category"><?php echo $row ['Category'] ?></p>
-                  <strong class="project-title">
+              <div class="product-info">
+                  <p class="product-category"><?php echo $row ['Category'] ?></p>
+                  <strong class="product-title">
                       <span><?php echo $row ['Name'] ?></span>
                       <h3 href="" class="more-details"><?php echo $row ['Price'] ?></h3>
                   </strong>
@@ -114,7 +117,13 @@ include 'header.php';
 
     </section>
     
+          <!-- Start #Pricing -->
+          <section >
+            
+            <?php include 'pricing.php'; ?>
+          </section>
 
+    <!-- End #Pricing -->
     <section class="cards contacts" id="contacts">
       <h2 class="title"> Contacts </h2>
       <div class="content">
@@ -142,6 +151,7 @@ include 'header.php';
 
     </section>
 
+    
 
    <footer class="footer">
      <p class="footer-title">Copyright @ <span>Virtual Victory Institute</span></p>

@@ -1,5 +1,5 @@
 <?php
-include("connection.php");
+include("Connection.php");
 session_start(); //must be to unset the session
 
 if(isset($_GET['logout']))
@@ -20,16 +20,43 @@ if(isset($_POST['userName']))
     $row = mysqli_fetch_array($res);
     if (mysqli_num_rows($res) > 0) 
     {
-        session_start();
+        
         // $_SESSION['userName'] = $email;
         $_SESSION['role'] = $row['role'];
         $_SESSION['name'] = $row['username'];
         $_SESSION['id'] = $row['id'];
-        header('Location:index.php');
+        if(isset($_SESSION['role'])){
+        ?>
+        
+        <script>
+
+setTimeout(function()
+{ 
+     window.location = "index.php"; 
+}, 2000);
+
+</script>
+<?php 
+} ?>
+        <script>
+
+setTimeout(function()
+{ 
+     window.location = "index.php"; 
+}, 2000);
+</script>
+<?php 
     }
     else
-    {
-        header('Location:login.html');
+    {?>
+       <script>
+
+setTimeout(function()
+{ 
+     window.location = "index.php"; 
+}, 2000);
+</script>
+<?php
     }
 
 }

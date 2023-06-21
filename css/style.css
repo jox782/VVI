@@ -16,9 +16,12 @@ font-family: 'Stalinist One', cursive; */
 /* 0a49f6 */
 :root {
   --primary-color: #0a49f6;
+  --main-color: #0a49f6;
   --sec-color: #fa4454;
   --th-color: #0a49f6;
   --arcade: "Press Start 2P", cursive;
+  --transparent-color: rgb(15 116 143 / 70%);
+  --section-padding: 100px;
 }
 
 header {
@@ -72,7 +75,7 @@ section {
 }
 
 .main h2 {
-  color: #fff;
+  color: #4e9eff;
   font-size: 1.4em;
   font-weight: 500;
 }
@@ -80,9 +83,15 @@ section {
 .main h2 span {
   display: inline-block; /*cuase its an inline element so i can't make margin and padding top or bottom*/
   margin-top: 10px;
-  color: #4e9eff;
+  color: #fff;
   font-size: 3em;
   font-weight: 700;
+}
+
+.main h2 span p {
+  display: inline;
+  /*color: var(--primary-color);
+  font-family: var(--arcade); */
 }
 
 .main h3 {
@@ -189,16 +198,16 @@ section {
   justify-content: center;
 }
 
-.projects {
+.product {
   background-color: #000016;
   min-height: 100vh;
 }
 
-.projects .content {
+.product .content {
   margin-top: 30px;
 }
 
-.project-card {
+.product-card {
   background-color: #fff;
   border: 1px solid #fff;
   border-radius: 10px;
@@ -209,45 +218,45 @@ section {
   transition: 0.7s ease;
 }
 
-.project-card:hover {
+.product-card:hover {
 }
 
-.project-card:hover span {
+.product-card:hover span {
 }
-.project-card a {
+.product-card a {
 }
 
-.project-card:hover a {
+.product-card:hover a {
   color: #fa4454;
 }
 
-.project-card:hover .project-image {
+.product-card:hover .product-image {
   opacity: 0.95;
 }
 
-.project-image img {
+.product-image img {
   width: 100%;
   height: 250px;
   object-fit: cover;
 }
 
-.project-info {
+.product-info {
   padding: 1em;
 }
 
-.project-category {
+.product-category {
   font-size: 0.8em;
   color: #000;
 }
 
-.project-title {
+.product-title {
   display: flex;
   justify-content: space-between;
   font-weight: 800;
   margin-top: 10px;
 }
 
-.projects .title {
+.product .title {
   color: var(--sec-color);
   text-transform: uppercase;
 }
@@ -390,7 +399,7 @@ select {
     position: relative;
 }*/
 
-/*.project-card img{
+/*.product-card img{
     filter: blur(1px);
 }*/
 

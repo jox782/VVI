@@ -1,0 +1,116 @@
+.pricing {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.pricing h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-top: 2em;
+  margin-bottom: 0;
+}
+
+.text-accent {
+  color: #00a1ab;
+}
+
+.fs-500 {
+  font-size: 1.3125rem;
+  margin: 0;
+}
+
+.mb {
+  margin-bottom: 0.5em;
+}
+
+.plans {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2em 0;
+}
+
+.plan {
+  width: 16.5rem;
+  padding: 2em;
+  border-radius: 1em;
+  margin: 0 0.5em 1em;
+}
+
+.plan--light {
+  color: #4e4e4e;
+  background: linear-gradient(-45deg, #e5e3e8, #fafafa);
+}
+
+.plan--light .plan-price {
+  color: #00a1ab;
+}
+
+.plan--light .btn {
+  color: #fff;
+  background: #4e4e4e;
+}
+
+.plan--accent {
+  color: #fff;
+  background: linear-gradient(-45deg, #00a1ab, #3741a0);
+}
+
+.plan--accent .btn {
+  color: #4e4e4e;
+  background: #fff;
+}
+
+.plan-title {
+  text-transform: uppercase;
+  margin: 0 0 1em;
+}
+
+.plan-price {
+  margin: 0;
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.plan-price span {
+  display: block;
+  font-size: 1.5625rem;
+  font-weight: 300;
+}
+
+.plan-description {
+  margin: 2em 0;
+  line-height: 1.5;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5em 0.75em;
+  border-radius: 0.25em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  color: #fff;
+  background: #00a1ab;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.75;
+}
+
+.btn-mb {
+  margin-bottom: 3em;
+}
+
+.btn--light {
+  color: #4e4e4e;
+  background: #fff;
+}
+
+.btn--dark {
+  color: #fff;
+  background: #4e4e4e;
+}

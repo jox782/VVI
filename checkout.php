@@ -67,6 +67,9 @@ if(isset($_POST['submit']))
       <span class="lname">Last Name <span class="required">*</span></span>
       <input type="text" name="lastName" value="<?php echo($row_user ['lastName'])?>" readonly>
     </label>
+    <?php 
+      if($type != "plans"){
+      ?>
     <label>
       <span>Town / City <span class="required">*</span></span>
       <input style="color:black" type="text" name="city" value="<?php echo($row_user ['city'])?>" required> 
@@ -79,6 +82,9 @@ if(isset($_POST['submit']))
       <span>Postcode / ZIP <span class="required" >*</span></span>
       <input style="color:black" type="text" name="zip" value="<?php echo($row_user ['zip'])?>" required> 
     </label>
+    <?php 
+      }
+      ?>
     <label>
       <span>Phone <span class="required" >*</span></span>
       <input type="tel" name="phone" value="<?php echo($row_user ['phone'])?> "readonly> 
@@ -99,19 +105,26 @@ if(isset($_POST['submit']))
         <td><?php echo($row ['Price'])?></td>
       </tr>
       <tr>
+      <?php 
+      if($type != "plans"){
+      ?>
         <td ><img style="width: 100px" src="productsImg/<?php echo($row ['img'])?>"></td>
+      <?php }
+      ?>
       </tr>
       <tr>
         <td>Subtotal</td>
         <td><?php echo($row ['Price'])?></td>
       </tr>
+      <?php if ($type != "plans"){  ?>
       <tr>
         <td>Shipping</td>
         <td>Free shipping</td>
       </tr>
+      <?php } ?>
     </table><br>
     <?php if(isset($type)){
-      if($type != "coaches"){
+      if($type != "coaches" && $type != "plans"){
       ?>
       <div>
         <input type="radio" name="dbt" value="cd" required> Cash on Delivery

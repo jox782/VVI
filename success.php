@@ -55,7 +55,7 @@
         <h1>Success</h1> 
         <p>We received your purchase request;<br/> we'll be in touch shortly!</p>
         <a href="index.php"> Return To Main Page</a>
-        <a href="orders.php"> Return To Main Page</a>
+        <a href="orders.php"> Show My Orders</a>
       </div>
     </body>
 </html>

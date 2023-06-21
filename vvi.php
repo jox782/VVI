@@ -88,26 +88,26 @@ $myquery = "SELECT * FROM `$type`";
     
    
 <!-- view -->
-    <section class="projects">   
-      <h2 class="title">Our professional $type</h2>
+    <section class="product">   
+      <h2 class="title">Our <?php $type ?></h2>
       <div class="content">
         <?php
         while($row = mysqli_fetch_array($result))
         {
         ?>
-          <div class="project-card" onclick="windo">
-              <div class="project-image">
+          <div class="product-card" onclick="windo">
+              <div class="product-image">
                  <a href="productDetails.php?number=<?php echo($row ['id']) ?>&type=<?php echo($type)?>"><img src="productsImg/<?php echo($row ['img'])?>"/></a>    <!--  -->
               </div>
-              <div class="project-info"> 
+              <div class="product-info"> 
 
-                  <p class="project-category">
+                  <p class="product-category">
                     <?php if($type == "coaches")
                     {echo( $row ['Role']);}else{
                       echo( $row ['Category']);
                     } ?>
                   </p>    <!--  -->
-                  <strong class="project-title">
+                  <strong class="product-title">
                       <div><?php echo $row ['Name'] ?></div>         <!--  -->
                       <div href="" class="more-details"><?php echo $row ['Price'] ?></div>  <!--  -->
                     </strong>

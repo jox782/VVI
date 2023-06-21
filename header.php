@@ -5,6 +5,7 @@
         <nav class="navigation">
           <a class="src" href="vvi.php?type=coaches">Coaches</a>
           <a class="src" href="vvi.php?type=product">Store</a>
+          <a class="src" href="#plans">Plans</a>
           <a href="#contacts">Contacts</a>
 
           <?php if(isset($_SESSION['role'])) {
