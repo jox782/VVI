@@ -16,8 +16,7 @@
             <p class="plan-price">$4.99<span>/month</span></p>
 
             <p class="plan-description">
-                Eleifend cursus volutpat risus convallis nam sed
-                quam sollicitudin eget leo at erat cursus justo
+                Experienced coaches for personalized feedback.
             </p>
 
             <a href="productDetails.php?number=1&type=plans" class="btn">Join Now</a>
@@ -29,9 +28,7 @@
             <p class="plan-price">$19.99<span>/month</span></p>
 
             <p class="plan-description">
-                Eleifend cursus volutpat risus convallis nam sed
-                quam sollicitudin eget leo at erat cursus justo
-            </p>
+Top-level coaches for real-time guidance.            </p>
 
             <a href="productDetails.php?number=2&type=plans" class="btn">Join Now</a>
         </div>
@@ -42,8 +39,7 @@
             <p class="plan-price">$49.99<span>/month</span></p>
 
             <p class="plan-description">
-                Eleifend cursus volutpat risus convallis nam sed
-                quam sollicitudin eget leo at erat cursus justo
+                Elite-level coaches for one-on-one coaching sessions.
             </p>
 
             <a href="productDetails.php?number=3&type=plans" class="btn">Join Now</a>

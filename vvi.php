@@ -89,7 +89,7 @@ $myquery = "SELECT * FROM `$type`";
    
 <!-- view -->
     <section class="product">   
-      <h2 class="title">Our <?php $type ?></h2>
+      <h2 class="title">Our <?php echo($type)  ?></h2>
       <div class="content">
         <?php
         while($row = mysqli_fetch_array($result))

@@ -27,7 +27,7 @@ $row = mysqli_fetch_array($result);
     <?php
 include 'header.php';
 ?>
-    <div class="container">
+    <div class="container" style="background-color: #000016;">
         <div class="box">
             <?php if($type == "plans"){?> 
                 <div class="plans">
@@ -74,9 +74,10 @@ include 'header.php';
                 <div class="options">
                     <a href="checkout.php?number=<?php echo($row ['id']) ?>&type=<?php echo($type) ?>">Buy It Now</a>
                 </div>
+<p class="description"><?php echo($row ['LongDescription']) ?></p>
+
             </div>
             <div class="description">
-                <p><?php echo($row ['LongDescription']) ?></p>
                 <ul class="features">
                     <?php if($type == "plans") { ?>
                     <?php if($product_id == 1) {?>

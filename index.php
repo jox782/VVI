@@ -88,7 +88,7 @@ include 'header.php';
     </section>
 
     <?php
-        $myquery = "SELECT * FROM `product`";
+        $myquery = "SELECT * FROM `product` WHERE selling = 'best-selling'";
          $result = mysqli_query($con, $myquery);
 
     ?>
@@ -102,7 +102,8 @@ include 'header.php';
         ?>
           <div class="product-card">
               <div class="product-image">
-                  <img src="productsImg/<?php echo($row ['img'])?>"/>
+                  <a href="productDetails.php?number=<?php echo($row ['id']) ?>&type=product"><img src="productsImg/<?php echo($row ['img'])?>"/></a>
+                  
               </div>
               <div class="product-info">
                   <p class="product-category"><?php echo $row ['Category'] ?></p>
