@@ -33,12 +33,14 @@ if (isset($_SESSION['id'])) {
 
 if (isset($_POST['submit'])) {
   if ($type == "plans") {
-    $plan = $product_id;
-    $addPlanOrder = "insert into `plan-order`(plan_id, customer_id)values('$plan', '$user_id')";
+
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
+    $product = $row['Name'];
+    $price = $row['Price'];
+    $addPlanOrder = "insert into `$table`(product, price, customer_id)values('$product', '$price', '$user_id')";
     mysqli_query($con, $addPlanOrder);
   } else {
-    $firstName = $_POST['firstName'];
-    $lastName = $_POST['lastName'];
     $phone = $_POST['phone'];
     $address = $_POST['address'];
     $city = $_POST['city'];

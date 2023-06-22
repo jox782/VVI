@@ -20,6 +20,7 @@
       if ($_SESSION['role'] == 'admin') {
         echo ('<a class="src" href="addp.php?type=product">Add product</a>');
         echo ('<a class="src" href="addCoaches.php?type=coaches">Add Coach</a>');
+        echo ('<a class="src" href="adminChoose.php">Mange Orders</a>');
       }
     } ?>
     <?php if (isset($_SESSION['role'])) {

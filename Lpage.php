@@ -24,8 +24,8 @@
             <p>Login</p>
           </div>
           <div class="info">
-            <input type="text" name="userName" placeholder="username">
-            <input type="password" name="password" placeholder="Password">
+            <input type="text" name="userName" placeholder="username" required>
+            <input type="password" name="password" placeholder="Password" required>
             <br>
             <input type="submit" name="log" value="Login">
           </div>
