@@ -438,7 +438,7 @@ select {
 
   .content {
     flex-direction: column;
-    align-items: center; /* ast5dmt align-item msh justify-content 3shan al flex-direction: column*/
+    align-items: center;
   }
 }
 
