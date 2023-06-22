@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 21, 2023 at 07:41 PM
+-- Generation Time: Jun 22, 2023 at 05:34 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -45,9 +45,11 @@ CREATE TABLE `coach-order` (
 --
 
 INSERT INTO `coach-order` (`id`, `product`, `price`, `status`, `address`, `city`, `zip`, `pay_way`, `customer_id`, `img`) VALUES
-(21, 'Najeeb Khan', 200, 'pending', 0, 0, '1234', '', 30, 'WhatsApp Image 2023-06-21 at 14.11.48.jpg'),
-(22, 'Najeeb Khan', 200, 'pending', 0, 0, '1234', '', 30, 'WhatsApp Image 2023-06-21 at 14.11.48.jpg'),
-(23, 'Najeeb Khan', 200, 'pending', 0, 0, '1234', '', 30, 'WhatsApp Image 2023-06-21 at 14.11.48.jpg');
+(21, 'Najeeb Khan', 200, 'accepted', 0, 0, '1234', '', 30, 'WhatsApp Image 2023-06-21 at 14.11.48.jpg'),
+(22, 'Najeeb Khan', 200, 'denied', 0, 0, '1234', '', 30, 'WhatsApp Image 2023-06-21 at 14.11.48.jpg'),
+(23, 'Najeeb Khan', 200, 'pending', 0, 0, '1234', '', 30, 'WhatsApp Image 2023-06-21 at 14.11.48.jpg'),
+(24, 'Zenichiro Hitsuka', 300, 'accepted', 0, 0, '1234', '', 30, 'WhatsApp Image 2023-06-21 at 14.11.46.jpg'),
+(25, 'Najeeb Khan', 200, 'denied', 0, 0, '1234', '', 30, 'WhatsApp Image 2023-06-21 at 14.11.48.jpg');
 
 -- --------------------------------------------------------
 
@@ -75,26 +77,8 @@ INSERT INTO `coaches` (`id`, `Name`, `Role`, `Description`, `LongDescription`, `
 (36, 'Erik Milošević', 'league of legends', 'Elite Coach', 'highly experienced coach who has a proven track record of success at the highest levels of the sport. Some advantages of working with an elite coach include:\r\n\r\n- High-level training: provide training and guidance that is tailored to the specific needs of each trainee, helping them to reach their full potential and achieve success at the highest levels of the sport.\r\n\r\n- Strategic planning: skilled at developing strategic plans and game plans that can help trainees succeed in competition.\r\n\r\n- Mental toughness: helping trainees develop mental toughness and resilience, which is essential for success at the highest levels of the sport.', '300.00', 'WhatsApp Image 2023-06-21 at 14.11.4hh8.jpg'),
 (37, 'Jana Khattab', 'FIFA 23', 'advanced Coach', '- Access to basic training materials and tutorials\r\n- Learning the fundamental skills of the game, such as passing, shooting, and defending\r\n- Understanding the different game modes and how to play them effectively', '100.00', 'WhatsApp Image 2023-06-21 at 14.11.4hjj8.jpg'),
 (38, 'Mukhtar Khan', 'FIFA 23', 'Grandmaster Coach', '- Personalized training \r\n- Development of playing style and strategies\r\n- Performance analysis to identify areas for improvement\r\n- Access to advanced training materials and tutorials', '200.00', 'WhatsApp Image 2023-06-21 at hh14.11.49.jpg'),
-(39, 'Zenichiro Hitsuka', 'FIFA 23', 'Elite Coach', 'highly experienced coach who has a proven track record of success at the highest levels of the sport. Some advantages of working with an elite coach include:\r\n\r\n- High-level training: provide training and guidance that is tailored to the specific needs of each trainee, helping them to reach their full potential and achieve success at the highest levels of the sport.\r\n\r\n- Strategic planning: skilled at developing strategic plans and game plans that can help trainees succeed in competition.\r\n\r\n- Mental toughness: helping trainees develop mental toughness and resilience, which is essential for success at the highest levels of the sport.', '300.00', 'WhatsApp Image 2023-06-21 at 14.11.46.jpg');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `plan-order`
---
-
-CREATE TABLE `plan-order` (
-  `plan_id` int(11) NOT NULL,
-  `customer_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `plan-order`
---
-
-INSERT INTO `plan-order` (`plan_id`, `customer_id`) VALUES
-(2, 30),
-(2, 30);
+(39, 'Zenichiro Hitsuka', 'FIFA 23', 'Elite Coach', 'highly experienced coach who has a proven track record of success at the highest levels of the sport. Some advantages of working with an elite coach include:\r\n\r\n- High-level training: provide training and guidance that is tailored to the specific needs of each trainee, helping them to reach their full potential and achieve success at the highest levels of the sport.\r\n\r\n- Strategic planning: skilled at developing strategic plans and game plans that can help trainees succeed in competition.\r\n\r\n- Mental toughness: helping trainees develop mental toughness and resilience, which is essential for success at the highest levels of the sport.', '300.00', 'WhatsApp Image 2023-06-21 at 14.11.46.jpg'),
+(40, 'Kamado Yeager', 'Valorant', 'Kamado Yeager Valoran Coach', 'If you want to coach in Valorant the first step you have to do is, learn how to watch and think about the game. Most of us just watch league of legends out of pure entertainment, watch streams to relax or maybe to find the next trick to climb the ladder in the next SoloQ Game. However, the problem usually is when we watch live streams we are not focused enough on the right thought process to extract the most out of our time when watching a league of legends match. Probably one of the reasons I personally extracted more from watching VODs was my commitment to get more information out of them.', '300.00', '649443924c9c39.82327669.jpeg');
 
 -- --------------------------------------------------------
 
@@ -120,6 +104,37 @@ INSERT INTO `plans` (`id`, `Name`, `Role`, `Description`, `LongDescription`, `Pr
 (1, 'Plus', '', 'Experienced coaches for personalized feedback.', 'This package is ideal for those who are looking for experienced coaches to provide personalized feedback on their gameplay. Coaches in this package have a good understanding of the game and can help you identify areas for improvement and provide tips to enhance your skills.\r\n', '100.00', ''),
 (2, 'Premium', '', 'Top-level coaches for real-time guidance.', 'This package is designed for those who want to work with top-level coaches who have extensive experience in the game. Coaches in this package can provide real-time guidance during gameplay, helping you make quick decisions and improve your overall performance.', '200.00', ''),
 (3, 'Platinum', '', 'Elite-level coaches for one-on-one coaching sessions.', 'This package is for those who are serious about taking their game to the next level. Coaches in this package are elite-level experts in the game and can provide one-on-one coaching sessions to help you achieve your full potential. They can help you develop a personalized training plan, identify your strengths and weaknesses, and provide ongoing support and guidance.', '300.00', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `plan_order`
+--
+
+CREATE TABLE `plan_order` (
+  `id` int(30) NOT NULL,
+  `product` varchar(50) NOT NULL,
+  `price` int(30) NOT NULL,
+  `status` varchar(10) NOT NULL DEFAULT 'pending',
+  `address` int(200) NOT NULL,
+  `city` int(30) NOT NULL,
+  `zip` varchar(4) NOT NULL,
+  `pay_way` varchar(20) NOT NULL,
+  `customer_id` int(30) NOT NULL,
+  `img` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `plan_order`
+--
+
+INSERT INTO `plan_order` (`id`, `product`, `price`, `status`, `address`, `city`, `zip`, `pay_way`, `customer_id`, `img`) VALUES
+(21, 'Najeeb Khan', 200, 'accepted', 0, 0, '1234', '', 30, 'WhatsApp Image 2023-06-21 at 14.11.48.jpg'),
+(22, 'Najeeb Khan', 200, 'accepted', 0, 0, '1234', '', 30, 'WhatsApp Image 2023-06-21 at 14.11.48.jpg'),
+(23, 'Najeeb Khan', 200, 'accepted', 0, 0, '1234', '', 30, 'WhatsApp Image 2023-06-21 at 14.11.48.jpg'),
+(24, 'Zenichiro Hitsuka', 300, 'accepted', 0, 0, '1234', '', 30, 'WhatsApp Image 2023-06-21 at 14.11.46.jpg'),
+(25, 'Premium', 200, 'accepted', 0, 0, '', '', 5, ''),
+(26, 'Premium', 200, 'accepted', 0, 0, '', '', 30, '');
 
 -- --------------------------------------------------------
 
@@ -154,7 +169,8 @@ INSERT INTO `product` (`id`, `Name`, `Category`, `ShortDescription`, `LongDescri
 (1262, 'Razer Skins - Xbox Series X ', 'skin', 'Durable console skins made with Customized 3M™ Cast Vinyl', 'The Razer Skins for the Xbox Series X in Geometric Quartz Complete is a set of high-quality protective skins that are designed to keep your gaming console safe from scratches, scuffs, and other types of damage. This set includes skins for the console itself, as well as the controller and the charging dock, all featuring a stylish geometric quartz design that adds a touch of personality to your gaming setup.\r\n\r\nThe skins are made from high-quality vinyl material that is both durable and easy to apply. The skins are designed to be easy to install, and they can be removed without leaving any residue behind. The skins are also designed to be thin and lightweight, which means that they won\'t add any extra bulk to your gaming console or controller.\r\n\r\nIn addition to their protective qualities, the Razer Skins for the Xbox Series X in Geometric Quartz Complete also feature Razer\'s Chroma RGB lighting technology. This allows you to customize the lighting on your gaming console and controller to match your gaming setup or personal style. The lighting can be controlled using Razer\'s Synapse software, which also allows you to customize other settings on your gaming console and controller.\r\n\r\nOverall, the Razer Skins for the Xbox Series X in Geometric Quartz Complete is a high-quality protective skin set that offers both style and functionality. It is designed to keep your gaming console and controller safe from damage while also allowing you to customize their appearance to match your personal style. If you\'re looking for a way to protect your Xbox Series X while also adding a touch of personality, the Razer Skins are an excellent choice.', '1235.00', 'https___hybrismediaprod.blob.core.windows.net_sys-master-phoenix-images-container_h67_hb0_9533815488542_230602-xbox-series-x-complete-geometric-quartz-1500x1000-1.jpg', ''),
 (1263, 'Razer Enki X', 'gaming chair', 'Essential Gaming Chair for All-Day Comfort\r\n', 'The Razer Enki X Chair is a premium gaming chair that is designed to provide gamers with the ultimate comfort and support during long gaming sessions. This chair features a sleek and stylish design that is inspired by racing car seats, and it is built with high-quality materials that are both durable and comfortable.\r\n\r\nThe Razer Enki X Chair features a multi-tilt mechanism that allows you to adjust the angle of the seat and backrest to your preferred position. This mechanism also allows you to lock the chair in place at any angle, providing you with the perfect level of support for your body. The chair also features adjustable armrests that can be moved up and down, forward and backward, and even angled to provide you with the perfect level of support for your arms and wrists.\r\n\r\nThe Razer Enki X Chair is also designed for comfort and durability. It features a high-density foam cushion that is covered with a breathable fabric that helps to keep you cool and comfortable during long gaming sessions. The chair is also built with a sturdy metal frame that can support up to 299 pounds, making it suitable for gamers of all sizes.\r\n\r\nIn addition to its comfort and support features, the Razer Enki X Chair also features Razer\'s Chroma RGB lighting technology. This allows you to customize the lighting on the chair to match your gaming setup or personal style. The lighting can be controlled using Razer\'s Synapse software, which also allows you to customize other settings on the chair.\r\n\r\nOverall, the Razer Enki X Chair is a premium gaming chair that is designed to provide gamers with the ultimate comfort and support during long gaming sessions. It is built with high-quality materials, features a multi-tilt mechanism, adjustable armrests, and Razer\'s Chroma RGB lighting technology, making it an excellent choice for serious gamers who demand the best.', '9238.00', 'https___hybrismediaprod.blob.core.windows.net_sys-master-phoenix-images-container_h5b_h82_9248880787486_211021-enki-x-1500x1000-1.jpg', ''),
 (1264, 'Razer Wireless Controller', 'controller', 'Officially Licensed Xbox Controller and Quick Charging Stand', 'The Razer Wireless Controller and Quick Charging Stand for Xbox Razer Limited Edition is a high-performance gaming controller and charging stand designed for Xbox gamers who demand the best. This limited edition set features a sleek and stylish design that is inspired by Razer\'s iconic gaming products, and it is built with high-quality materials that are both durable and comfortable.\r\n\r\nThe Razer Wireless Controller features Razer\'s HyperSpeed wireless technology, which provides a lag-free wireless connection that is as fast as a wired connection. This means that you can enjoy the freedom of wireless gaming without sacrificing performance. The controller also features Razer\'s Mecha-Tactile Action Buttons and D-Pad, which provide a tactile and responsive feel that is perfect for fast-paced gaming.\r\n\r\nThe Quick Charging Stand is designed to keep your controller charged and ready to go at all times. It features a sleek and stylish design that matches the Razer Wireless Controller, and it is built with high-quality materials that are both durable and stable. The stand also features Razer Chroma RGB lighting technology, which allows you to customize the lighting on the stand to match your gaming setup or personal style.\r\n\r\nThe Razer Wireless Controller and Quick Charging Stand for Xbox Razer Limited Edition also comes with a USB-C cable for charging the controller, and it is compatible with Xbox One and Xbox Series X/S consoles. The controller has a battery life of up to 50 hours on a single charge, and the Quick Charging Stand can fully charge the controller in just four hours.\r\n\r\nOverall, the Razer Wireless Controller and Quick Charging Stand for Xbox Razer Limited Edition is a high-performance gaming controller and charging stand designed for serious Xbox gamers who demand the best. It features Razer\'s HyperSpeed wireless technology, Mecha-Tactile Action Buttons and D-Pad, and Razer Chroma RGB lighting technology, making it an excellent choice for gamers who want a premium gaming experience.', '6148.00', 'https___hybrismediaprod.blob.core.windows.net_sys-master-phoenix-images-container_hf6_h2c_9445021876254_221006-universal-quick-charging-stand-xob-1500x1000-1.jpg', ''),
-(1265, 'Razer Wolverine V2 Pro', 'controller', 'Wireless Pro Gaming Controller for PS5™ Consoles and PC', 'The Razer Wolverine V2 Pro is a high-performance gaming controller designed for Xbox and PC gamers who demand the best. This controller features a sleek and stylish design that is inspired by Razer\'s iconic gaming products, and it is built with high-quality materials that are both durable and comfortable.\r\n\r\nThe Razer Wolverine V2 Pro features Razer\'s Mecha-Tactile Action Buttons and D-Pad, which provide a tactile and responsive feel that is perfect for fast-paced gaming. The controller also features six remappable buttons, allowing you to customize the controller to your preferred layout. The controller also has a hair trigger mode, which reduces the distance required to activate the triggers, providing a faster response time.\r\n\r\nThe Razer Wolverine V2 Pro is also designed for comfort and durability. It features a non-slip rubber grip that provides a comfortable and secure grip during long gaming sessions. The controller is also built with a sturdy metal frame that can withstand the rigors of intense gaming.\r\n\r\nIn addition to its performance and comfort features, the Razer Wolverine V2 Pro also features Razer Chroma RGB lighting technology. This allows you to customize the lighting on the controller to match your gaming setup or personal style. The lighting can be controlled using Razer\'s Synapse software, which also allows you to customize other settings on the controller.\r\n\r\nOverall, the Razer Wolverine V2 Pro is a high-performance gaming controller designed for serious Xbox and PC gamers who demand the best. It features Razer\'s Mecha-Tactile Action Buttons and D-Pad, six remappable buttons, hair trigger mode, non-slip rubber grip, and Razer Chroma RGB lighting technology, making it an excellent choice for gamers who want a premium gaming experience.', '7724.00', 'https___hybrismediaprod.blob.core.windows.net_sys-master-phoenix-images-container_h2d_h0b_9450417455134_221109-wolverine-v2-pro-1500x1000-5.jpg', '');
+(1265, 'Razer Wolverine V2 Pro', 'controller', 'Wireless Pro Gaming Controller for PS5™ Consoles and PC', 'The Razer Wolverine V2 Pro is a high-performance gaming controller designed for Xbox and PC gamers who demand the best. This controller features a sleek and stylish design that is inspired by Razer\'s iconic gaming products, and it is built with high-quality materials that are both durable and comfortable.\r\n\r\nThe Razer Wolverine V2 Pro features Razer\'s Mecha-Tactile Action Buttons and D-Pad, which provide a tactile and responsive feel that is perfect for fast-paced gaming. The controller also features six remappable buttons, allowing you to customize the controller to your preferred layout. The controller also has a hair trigger mode, which reduces the distance required to activate the triggers, providing a faster response time.\r\n\r\nThe Razer Wolverine V2 Pro is also designed for comfort and durability. It features a non-slip rubber grip that provides a comfortable and secure grip during long gaming sessions. The controller is also built with a sturdy metal frame that can withstand the rigors of intense gaming.\r\n\r\nIn addition to its performance and comfort features, the Razer Wolverine V2 Pro also features Razer Chroma RGB lighting technology. This allows you to customize the lighting on the controller to match your gaming setup or personal style. The lighting can be controlled using Razer\'s Synapse software, which also allows you to customize other settings on the controller.\r\n\r\nOverall, the Razer Wolverine V2 Pro is a high-performance gaming controller designed for serious Xbox and PC gamers who demand the best. It features Razer\'s Mecha-Tactile Action Buttons and D-Pad, six remappable buttons, hair trigger mode, non-slip rubber grip, and Razer Chroma RGB lighting technology, making it an excellent choice for gamers who want a premium gaming experience.', '7724.00', 'https___hybrismediaprod.blob.core.windows.net_sys-master-phoenix-images-container_h2d_h0b_9450417455134_221109-wolverine-v2-pro-1500x1000-5.jpg', ''),
+(1266, 'Redragon Keyboard k552', 'Keyboard', 'Redragon Keyboard k552 Red Switch', 'Redragon K552-2 KUMARA Gaming Mechanical Keyboard - [Red] Switches - METAL ABS CONSTRUCTION - Anti-Ghosting - PC/Laptop / PS4 & PS5', '1000.00', '6494421de39f98.49277158.jpg', '');
 
 -- --------------------------------------------------------
 
@@ -184,7 +200,11 @@ INSERT INTO `product_order` (`id`, `product`, `price`, `status`, `address`, `cit
 (8, 'Xbox Wireless Controller', 1800, 'pending', 0, 0, '1234', '', 30, '64711c329a2370.22533638.jpg'),
 (9, 'MX ERGO', 3089, 'pending', 0, 0, '1234', '', 30, 'mx-ergo-plus-gallery-02.webp'),
 (10, 'Redragon PISCES P016 Gaming Mouse Pad', 125, 'pending', 0, 0, '1234', '', 30, '73oPTidFl27eQvOXy0vBSOloDIO4FPvsFfdNINoI.jpg'),
-(11, 'Xbox Wireless Controller', 1800, 'pending', 0, 0, '1234', '', 30, '64711c329a2370.22533638.jpg');
+(11, 'Xbox Wireless Controller', 1800, 'pending', 0, 0, '1234', '', 30, '64711c329a2370.22533638.jpg'),
+(12, 'Logitech G Pro X Superlight', 4500, 'pending', 0, 0, '1234', '', 30, '64710188013557.49616477.jpg'),
+(13, 'ZONE VIBE 100', 3289, 'pending', 0, 0, '1234', '', 30, 'zone-vibe-100-gallery-white-1.webp'),
+(14, 'Xbox Wireless Controller', 1800, 'pending', 0, 0, '1234', '', 30, '64711c329a2370.22533638.jpg'),
+(15, 'Logitech G Pro X Superlight', 4500, 'pending', 0, 0, '123', '', 5, '64710188013557.49616477.jpg');
 
 -- --------------------------------------------------------
 
@@ -211,9 +231,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `firstName`, `lastName`, `address`, `city`, `phone`, `zip`) VALUES
-(5, 'admin', 'admin@a.com', 'admin', 'admin', '', '', '', '', '', 0),
+(5, 'admin', 'admin@a.com', 'admin', 'admin', 'Yousef', 'Ahmed', 'new Cairo', 'cairo', '01204846938', 123),
 (30, 'jox', 'yousef.a.abdelkarim@gmail.com', '123', 'user', 'Yousef', 'Abdelkariem', 'naser city, cairo', 'cairo', '+11204846938', 1234),
-(31, '123123', 'yousef.a.abdelkarim@gmail.com', '123', 'user', 'Yousef', 'Abdelkariem', 'naser city, cairo', 'cairo', '+11204846938', 123);
+(31, '123123', 'yousef.a.abdelkarim@gmail.com', '123', 'user', 'Yousef', 'Abdelkariem', 'naser city, cairo', 'cairo', '+11204846938', 123),
+(32, 'joe', 'yousef.a.abdelkarim@gmail.com', '123123123123', 'user', 'Yousef', 'Abdelkariem', 'naser, city', 'cairo', '+112000000', 123);
 
 --
 -- Indexes for dumped tables
@@ -235,6 +256,12 @@ ALTER TABLE `coaches`
 -- Indexes for table `plans`
 --
 ALTER TABLE `plans`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `plan_order`
+--
+ALTER TABLE `plan_order`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -263,13 +290,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `coach-order`
 --
 ALTER TABLE `coach-order`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `coaches`
 --
 ALTER TABLE `coaches`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `plans`
@@ -278,22 +305,28 @@ ALTER TABLE `plans`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
+-- AUTO_INCREMENT for table `plan_order`
+--
+ALTER TABLE `plan_order`
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1266;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1267;
 
 --
 -- AUTO_INCREMENT for table `product_order`
 --
 ALTER TABLE `product_order`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
