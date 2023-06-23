@@ -12,15 +12,15 @@ if (isset($_POST['submit'])) {
   $fileExt = explode('.', $fileName);
   $fileActualExt = strtolower(end($fileExt));
   $fileNameNew = uniqid('', true) . "." . $fileActualExt;
-  $fileDestination = 'productsImg/' . $fileNameNew;
+  $fileDestination = '' . $fileNameNew;
   move_uploaded_file($fileTmpName, $fileDestination);
 
   $name = $_POST['name'];
   $price = $_POST['price'];
-  $role = $_POST['role'];
+  $category = $_POST['category'];
   $shortDesc = $_POST['shortDesc'];
   $longDesc = $_POST['longDesc'];
-  $qu = "insert into `coaches` (Name, Role, Description, LongDescription, Price, img) values('$name','$role', '$shortDesc', '$longDesc', '$price', '$fileNameNew')";
+  $qu = "insert into `product` (Name, Price, Category, ShortDescription, LongDescription, img) values('$name', '$price','$category', '$shortDesc', '$longDesc', '$fileNameNew')";
   mysqli_query($con, $qu);
   $msg = "Added Successfully";
 }
@@ -34,27 +34,27 @@ if (isset($_POST['submit'])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-  <link href="/css/style.css" rel="stylesheet" />
-  <title>add coaches</title>
+  <link href="css/style.css" rel="stylesheet" />
+  <title>add products</title>
 </head>
 
 <body>
   <?php
   include 'header.php';
   ?>
-  <p><?php echo ($msg); ?></p>
+
   <form method="post" enctype="multipart/form-data">
     <section>
       <div class="sign-content">
         <div class="sign-card">
           <div class="sign">
-            <p>Add Coaches</p>
+            <p>Add products</p>
           </div>
           <div class="info">
             <p style="color: #14ff00;"><?php echo ($msg); ?></p>
             <input type="text" name="name" placeholder="product name" required>
             <input type="number" name="price" placeholder="price" required>
-            <input type="text" name="role" placeholder="role" required>
+            <input type="text" name="category" placeholder="category" required>
             <input type="text" name="shortDesc" placeholder="short description" required>
             <textarea type="text" name="longDesc" placeholder="long description" class="add-text-area" required></textarea>
             <input type="file" name="file" placeholder="img" accept="image/png, image/jpeg">
@@ -64,6 +64,9 @@ if (isset($_POST['submit'])) {
         </div>
       </div>
   </form>
+
+
 </body>
+
 
 </html>

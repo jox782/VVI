@@ -1,7 +1,7 @@
 <?php
 include 'Connection.php';
+$msg = "";
 if (isset($_POST['userName'])) {
-
   $uname = $_POST['userName'];
   $firstName = $_POST['firstName'];
   $lastName = $_POST['lastName'];
@@ -18,9 +18,13 @@ if (isset($_POST['userName'])) {
   if ($num == 1) {
     echo "Username already taken";
   } else {
-    $reg = "insert into `users`(username, email, password, firstName, lastName, address, city, phone, zip)values('$uname', '$email', '$pass', '$firstName', '$lastName', '$address', '$city', '$phone', '$zip')";
-    mysqli_query($con, $reg);
-    header("Location: Lpage.php");
+    if ($pass == $confirmPassword) {
+      $reg = "insert into `users`(username, email, password, firstName, lastName, address, city, phone, zip)values('$uname', '$email', '$pass', '$firstName', '$lastName', '$address', '$city', '$phone', '$zip')";
+      mysqli_query($con, $reg);
+      header("Location: Lpage.php");
+    } else {
+      $msg = "Password does not match";
+    }
   }
 }
 ?>
@@ -60,6 +64,8 @@ if (isset($_POST['userName'])) {
             <br>
             <input type="submit" name="uname" value="Register">
           </div>
+          <p style="text-align: center;
+    color: red;"><?php echo ($msg); ?></p>
         </div>
       </div>
   </form>
